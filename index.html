@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modern Weather App</title>
+
+  <!-- TailwindCSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="./manifest.json">
+<meta name="theme-color" content="#2193b0">
+<link rel="apple-touch-icon" href="./icons/icon-192.png">
+</head>
+<body class="animated-bg min-h-screen flex items-center justify-center text-white">
+
+  <!-- App Container -->
+  <div class="w-full max-w-2xl p-8 glass-card shadow-2xl transition transform hover:scale-105 duration-500">
+    <h1 class="text-4xl font-extrabold text-center mb-6 drop-shadow-lg">🌦 Modern Weather App</h1>
+
+    <!-- Search -->
+    <div class="flex mb-8 shadow-lg">
+      <input 
+        id="cityInput"
+        type="text" 
+        placeholder="🔍 Enter city..."
+        class="flex-grow p-4 rounded-l-2xl text-black outline-none focus:ring-2 focus:ring-indigo-400"
+      />
+      <button 
+        onclick="getWeather()" 
+        class="bg-gradient-to-r from-yellow-400 to-orange-500 px-6 text-lg font-semibold rounded-r-2xl hover:from-yellow-500 hover:to-orange-600 transition-all">
+        Search
+      </button>
+    </div>
+
+    <!-- Current Weather -->
+    <div id="weatherResult" class="text-center space-y-2"></div>
+
+    <!-- Forecast -->
+    <h2 class="text-xl font-bold mt-8 mb-3 text-center">5-Day Forecast</h2>
+    <div id="forecast" class="grid grid-cols-2 sm:grid-cols-5 gap-4"></div>
+
+    <!-- Geolocation Button -->
+    <div class="text-center mt-8">
+      <button 
+        onclick="getLocationWeather()" 
+        class="bg-gradient-to-r from-green-400 to-emerald-600 px-8 py-3 rounded-2xl font-semibold text-lg hover:from-green-500 hover:to-emerald-700 transition-all shadow-lg">
+        📍 Use Current Location
+      </button>
+    </div>
+  </div>
+
+  <!-- Script -->
+  <script src="script.js"></script>
+</body>
+</html>
